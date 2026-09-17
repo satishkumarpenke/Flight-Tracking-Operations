@@ -1,7 +1,35 @@
 # FlightTrackingApp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+## Installation
 
+Clone the repository:
+
+git clone https://github.com/satishkumarpenke/Flight-Tracking-Operations.git
+
+Go to the project folder:
+
+cd flight-dashboard
+
+Install dependencies:
+
+npm install
+
+Run the application:
+
+ng serve
+
+Open in browser:
+
+http://localhost:4200
+
+## Leaflet Setup
+
+The project uses Leaflet for maps.
+
+Leaflet CSS is included in angular.json:
+
+node_modules/leaflet/dist/leaflet.css
 ## Development server
 
 To start a local development server, run:
@@ -57,3 +85,5 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
