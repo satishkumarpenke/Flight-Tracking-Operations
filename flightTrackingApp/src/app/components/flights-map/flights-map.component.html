@@ -1,0 +1,160 @@
+<main class="content-grid">
+    <section class="map-card">
+
+      <div class="card-header">
+
+        <div>
+          <h2>Flight Operations Map</h2>
+          <span>
+            {{ filteredFlights.length }} flights displayed
+          </span>
+        </div>
+
+      </div>
+
+      <div
+        id="flight-map"
+        class="flight-map">
+      </div>
+
+    </section>
+
+    <aside class="details-card">
+
+      <div class="details-header">
+
+        <h2>Flight Details</h2>
+
+      </div>
+
+
+      <ng-container
+        *ngIf="selectedFlight; else noFlight">
+
+        <div class="flight-title">
+
+          <div>
+            <span class="flight-number">
+              {{ selectedFlight.flightNumber }}
+            </span>
+
+            <span class="callsign">
+              {{ selectedFlight.callsign }}
+            </span>
+          </div>
+
+          <span
+            class="status" [ngClass]="getStatusClass(selectedFlight.status)">
+
+            {{ selectedFlight.status }}
+
+          </span>
+
+        </div>
+
+
+        <div class="route-display">
+
+          <div class="airport">
+
+            <strong>
+              {{ selectedFlight.origin.code }}
+            </strong>
+
+            <span>
+              {{ selectedFlight.origin.name }}
+            </span>
+
+          </div>
+
+
+          <div class="route-line">
+            ✈
+          </div>
+
+
+          <div class="airport">
+
+            <strong>
+              {{ selectedFlight.destination.code }}
+            </strong>
+
+            <span>
+              {{ selectedFlight.destination.name }}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="details-list">
+
+          <div class="detail-row">
+
+            <span>Aircraft</span>
+
+            <strong>
+              {{ selectedFlight.aircraftType }}
+            </strong>
+
+          </div>
+
+
+          <div class="detail-row">
+
+            <span>Callsign</span>
+
+            <strong>
+              {{ selectedFlight.callsign }}
+            </strong>
+
+          </div>
+
+
+          <div class="detail-row">
+
+            <span>Departure</span>
+
+            <strong>
+              {{ selectedFlight.departureTime }}
+            </strong>
+
+          </div>
+
+
+          <div class="detail-row">
+
+            <span>Arrival</span>
+
+            <strong>
+              {{ selectedFlight.arrivalTime }}
+            </strong>
+
+          </div>
+
+        </div>
+
+      </ng-container>
+
+
+      <ng-template #noFlight>
+
+        <div class="empty-state">
+
+          <div class="empty-icon">✈</div>
+
+          <h3>Select a flight</h3>
+
+          <p>
+            Click a flight marker on the map
+            to view operational details.
+          </p>
+
+        </div>
+
+      </ng-template>
+
+    </aside>
+
+  </main>

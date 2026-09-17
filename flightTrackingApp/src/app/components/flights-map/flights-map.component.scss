@@ -1,0 +1,249 @@
+.content-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) 340px;
+
+  gap: 20px;
+}
+
+
+
+
+.map-card,
+.details-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+.card-header {
+  padding: 18px 20px;
+
+  h2 {
+    margin: 0;
+    font-size: 17px;
+  }
+
+  span {
+    display: block;
+    margin-top: 4px;
+    color: #718096;
+    font-size: 12px;
+  }
+}
+
+
+.flight-map {
+  height: 620px;
+  width: 100%;
+}
+
+
+
+
+.details-header {
+  padding: 20px;
+  border-bottom: 1px solid #edf0f5;
+
+  h2 {
+    margin: 0;
+    font-size: 17px;
+  }
+}
+
+
+.flight-title {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+.flight-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+.callsign {
+  color: #718096;
+  font-size: 13px;
+}
+
+
+.status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+.status.active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+
+.status.delayed {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+
+.status.arrived {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+
+.status.scheduled {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+
+.route-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: #f8fafc;
+}
+
+
+.airport {
+  display: flex;
+  flex-direction: column;
+
+  strong {
+    font-size: 24px;
+  }
+
+  span {
+    color: #718096;
+    font-size: 11px;
+  }
+}
+
+
+.route-line {
+  color: #2563eb;
+  font-size: 20px;
+}
+
+
+.details-list {
+  padding: 10px 20px;
+}
+
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf0f5;
+
+  span {
+    color: #718096;
+    font-size: 13px;
+  }
+
+  strong {
+    font-size: 13px;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 100px 30px;
+  color: #718096;
+}
+
+
+.empty-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+
+.empty-state h3 {
+  color: #172033;
+}
+
+
+
+
+//Map animations
+
+::ng-deep .animated-flight-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+::ng-deep .flight-wrapper {
+  position: relative;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform-origin: center center;
+}
+
+::ng-deep .flight-symbol {
+  position: relative;
+  z-index: 2;
+
+  font-size: 21px;
+  line-height: 1;
+
+  color: white;
+
+  text-shadow:
+    0 0 3px #000,
+    0 0 7px var(--flight-color),
+    0 0 12px var(--flight-color);
+}
+
+::ng-deep .flight-glow {
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+
+  background: var(--flight-color);
+
+  opacity: 0.25;
+
+  filter: blur(6px);
+
+  animation: flightPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes flightPulse {
+
+  0% {
+    transform: scale(0.7);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(0.7);
+    opacity: 0.1;
+  }
+}

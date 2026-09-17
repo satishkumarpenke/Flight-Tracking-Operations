@@ -1,0 +1,55 @@
+<div class="">
+    <header class="dashboard-header">
+    <div>
+      <h1>Aviation Operations</h1>
+      <p>Real-time flight monitoring dashboard</p>
+    </div>
+    <div class="live-indicator">
+      <span></span>
+      LIVE
+    </div>
+  </header>
+
+  <section class="dashboard-main">
+
+    <div class="dashboard-card">
+      <div class="card-icon">✈</div>
+
+      <div>
+        <span>Total Flights</span>
+        <strong>{{ totalFlights }}</strong>
+      </div>
+    </div>
+
+
+    <div class="dashboard-card active">
+      <div class="card-icon">●</div>
+
+      <div>
+        <span>Active Flights</span>
+        <strong>{{ activeFlights }}</strong>
+      </div>
+    </div>
+
+
+    <div class="dashboard-card delayed">
+      <div class="card-icon">!</div>
+
+      <div>
+        <span>Delayed Flights</span>
+        <strong>{{ delayedFlights }}</strong>
+      </div>
+    </div>
+
+
+    <div class="dashboard-card arrived">
+      <div class="card-icon">✓</div>
+
+      <div>
+        <span>Arrived Flights</span>
+        <strong>{{ arrivedFlights }}</strong>
+      </div>
+    </div>
+
+  </section>
+</div>

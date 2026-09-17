@@ -1,0 +1,51 @@
+
+@media (max-width: 1100px) {
+    .dashboard-main {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .filter-panel form {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .details-card {
+        min-height: 400px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard {
+        padding: 12px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        gap: 15px;
+        h1{
+            font-size: 24px !important;
+        }
+    }
+
+    .dashboard-main {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-panel form {
+        grid-template-columns: 1fr 1fr !important;
+    }
+    .content-grid{
+        grid-template-columns: auto !important;
+    }
+    .flight-map {
+        height: 450px;
+    }
+}

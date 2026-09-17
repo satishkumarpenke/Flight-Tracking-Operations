@@ -1,0 +1,7 @@
+<div class="flightOp-UserInterFace">
+    <div style="padding:10px">
+        <app-dashboard [flightsData]="flights"></app-dashboard>
+    <app-flight-filters [flightsData]="flights" (searchData)="getSearchData($event)"></app-flight-filters>
+    <app-flights-map [flightsData]="flights" [flightsSearchData]="searchData"></app-flights-map>
+    </div>
+</div>
