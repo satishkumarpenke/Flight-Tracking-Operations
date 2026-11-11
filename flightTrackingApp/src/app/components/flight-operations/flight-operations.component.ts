@@ -22,6 +22,20 @@ export class FlightOperationsComponent {
 
   }
   ngOnInit(): void {
+    
+    this.flightService.getAllFlights()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(flights => {
+        this.flights = flights;
+        this.filteredFlights = flights;
+        this.flightsData=this.flights;
+      },(err)=>{
+        alert("Server Not connected getting static Data")
+        this.statictJsonData();
+      });
+  }
+
+  statictJsonData(){
     this.flightService.flights$
       .pipe(takeUntil(this.destroy$))
       .subscribe(flights => {
